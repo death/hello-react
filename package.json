@@ -1,0 +1,30 @@
+{
+  "name": "hello-react",
+  "version": "0.0.1",
+  "description": "React frontend boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-css": "catw -c 'lessc -' 'style/*.less' -o static/bundle.css -v",
+    "watch-js": "watchify -t [ reactify ] index.js -o static/bundle.js -dv",
+    "watch": "npm run watch-css & npm run watch-js",
+    "build-css": "catw -c 'lessc -' 'style/*.less' > static/bundle.css",
+    "build-js": "NODE_ENV=production browserify -t [ reactify ] index.js | uglifyjs > static/bundle.js",
+    "build": "npm run build-css && npm run build-js"
+  },
+  "author": "death",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/death/hello-react"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.1",
+    "react": "^0.12.2",
+    "react-bootstrap": "^0.13.0",
+    "reactify": "^0.17.1",
+    "superagent": "^0.21.0",
+    "underscore": "^1.7.0"
+  }
+}
