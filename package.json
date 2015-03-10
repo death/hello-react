@@ -9,7 +9,7 @@
     "watch-js": "watchify -t [ reactify ] index.js -o static/bundle.js -dv",
     "watch": "npm run watch-css & npm run watch-js",
     "build-css": "catw -c 'lessc -' 'style/*.less' > static/bundle.css",
-    "build-js": "NODE_ENV=production browserify -t [ reactify ] index.js | uglifyjs > static/bundle.js",
+    "build-js": "NODE_ENV=production browserify -t [ reactify ] index.js | uglifyjs -m -c > static/bundle.js",
     "build": "npm run build-css && npm run build-js"
   },
   "author": "death",
