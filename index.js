@@ -1,6 +1,6 @@
 var React = require("react");
 var ReactBootstrap = require("react-bootstrap");
-var _ = require("underscore");
+var _ = require("lodash");
 var superagent = require("superagent");
 
 var App = React.createClass({
